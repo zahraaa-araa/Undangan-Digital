@@ -1,0 +1,161 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.cover{
+    background-image: url(../assets/foto/bacground1.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+        font-family: inknut;
+        font-size: 10px;
+        color: #000000;  
+        border-radius: 20px;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        min-height: 135vh;
+}
+.cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 135vh;
+    background-color: rgba(125, 123, 123, 0.5);
+    z-index: 0; 
+}
+.cover * {
+    position: relative;
+    z-index: 0;
+}
+.kata3{
+    font-size: 20px;
+    transform: translateY(50px);
+    color: #5E080B;
+    animation: slideUp 2s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kata4{
+    font-size: 15px;
+    color:#6A6764;
+    transform: translateY(50px);
+    animation: slideUp 2s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kata5{
+    font-size: 18px;
+    color: #ffff;
+    animation: slideUp 2s ease-in-out forwards;
+    
+}
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.kata7{
+    color: #5E080B;
+    font-size: 30px;
+    animation: slideUp 2s ease-in-out forwards;
+}
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.foto-cover {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+.latar{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6A6764;
+}
+.kata8{
+    font-size: medium;
+    padding: 10px;
+    border-radius: 10px;
+    color: #ffffff;
+    margin-top: 100px;
+    animation: slideUp 2s ease-in-out forwards;
+}
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.link-ig {
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-top: 500px;
+}
+.ikon{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+.latar a.active::before{
+    background-color: #ffff;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+@media screen and (max-width: 768px){
+    .cover{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .foto-cover{
+        margin-top: -200px;
+    }
+}

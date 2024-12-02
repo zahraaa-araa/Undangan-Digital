@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/acara.css">
+    <title>acara</title>
+</head>
+<body>
+    <div class="cover">
+    <br><br><h2 class="judul1">Surah Ar - Rum Ayat 21</h2>
+    <br><p class="isi2">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْمَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</p>
+    <br><p class="isi3">Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu<br>sendiri agar kamu merasa tenteram kepadanya.Dia menjadikan di antaramu rasa cinta dan kasih sayang.<br>
+        Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
+       <br> <p class="isi4">Doa Pernikahan</p>
+        <p class="isi5">بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+        <p class="isi6">Semoga Allah Memberkahimu di waktu bahagia dan memberkahimu di waktu susah,<br> dan semoga Allah menyatukan kalian berdua dalam kebaikan.
+            <br>(HR. Abu Daud, no.2130; Tirmidzi, no.1091. AL Hafizh Abu Thahir mengatakan bahwa sanad hadist ini sahih).
+        </p>
+       <br> <div class="countdown">
+            <div>
+                <h1 id="days">0</h1>
+                <p>Hari</p>
+            </div>
+            <div>
+                <h1 id="hours">0</h1>
+                <p>Jam</p>
+            </div>
+            <div>
+                <h1 id="minutes">0</h1>
+                <p>Menit</p>
+            </div>
+            <div>
+                <h1 id="seconds">0</h1>
+                <p>Detik</p>
+            </div>
+        </div>
+    
+        <script>
+            // Set the date for the countdown (Example: December 31, 2024)
+            var countdownDate = new Date("Dec 31, 2024 00:00:00").getTime();
+    
+            // Update the countdown every 1 second
+            var countdownFunction = setInterval(function() {
+    
+                // Get today's date and time
+                var now = new Date().getTime();
+    
+                // Find the distance between now and the countdown date
+                var distance = countdownDate - now;
+    
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                // Display the result in the respective elements
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+    
+                // If the countdown is over, write some text
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    document.querySelector(".countdown").innerHTML = "Event has started!";
+                }
+            }, 1000);
+        </script>
+
+        <div class="ucapan">
+            <div class="card">
+                <h2 class="title">Resepsi Pernikahan</h2>
+                <p class="month">Desember</p>
+                <p class="date"><span>Minggu</span> <span>06</span> <span>2036</span></p>
+                <p class="time">pukul 06.00 sampai selesai</p>
+                <p class="location">Hotel Golden Tulip Holland Resort Batu</p>
+                <br><br><a href="https://maps.app.goo.gl/HQJQtr1CmBP8fMeM9" target="_blank" class="location-link">
+                    Lokasi  
+                </a>
+            </div>
+            <div class="card">
+                <h2 class="title">Akad Pernikahan</h2>
+                <p class="month">Desember</p>
+                <p class="date"><span>Jum'at</span> <span>04</span> <span>2036</span></p>
+                <p class="time">pukul 12.00 sampai selesai</p>
+                <p class="location">Masjid Agung Malang</p>
+                <br><br><a href="https://maps.app.goo.gl/f2ziwEyZF9T9LDvr6" target="_blank" class="location-link">
+                    Lokasi  
+                </a>
+                <audio id="audioPlayer" autoplay loop>
+                    <source src="../assets/icon/Dystinct -La (Lyrics parole).mp3" type="audio/mpeg">
+                </audio>
+            
+                <script>
+                    const audio = document.getElementById('audioPlayer');
+            
+                    // Simpan posisi terakhir audio di localStorage
+                    audio.addEventListener('timeupdate', function() {
+                        localStorage.setItem('audioCurrentTime', audio.currentTime);
+                    });
+            
+                    // Lanjutkan pemutaran audio dari posisi terakhir yang tersimpan
+                    window.addEventListener('load', function() {
+                        const savedTime = localStorage.getItem('audioCurrentTime');
+                        if (savedTime) {
+                            audio.currentTime = savedTime;
+                        }
+                        audio.play();
+                    });
+                </script>
+        </div> 
+    </div>
+</div>
+    <div class="latar">
+        <a href="../index.html">
+            <img src="../assets/icon/home.svg" alt="home">
+        </a>
+            <a href="../page/tombol.html">
+                <img src="../assets/icon/mempelai.svg" alt="mempelai">
+            </a>
+               <a href="../page/acara.html" class="active">
+                <img src="../assets/icon/acara.svg" alt="acara" class="ikon">
+            </a>
+                        <a href="../page/gambar.html">
+                            <img src="../assets/icon/galerii.svg" alt="galeri">
+                        </a>
+                            <a href="../page/wish.html">
+                                <img src="../assets/icon/wish.svg" alt="wish">
+                            </a>
+                               <a href="../page/penutup.html">
+                                <img src="../assets/icon/penutup.svg" alt="penutup">
+                            </a>
+</body>
+</html>

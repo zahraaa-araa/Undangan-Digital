@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/wish.css">
+    <title>wish</title>
+</head>
+<body>
+    <div class="cover">
+    <br><br><h2 class="rsvp1">RSVP</h2>
+    <br><h2 class="baca">Mohon untuk mengisi<br>rsvp di bawah ini</h2>
+    <div class="rsvp-container">
+        <form action="../page/thankyou.html" method="POST">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Alamat Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="attendance">Jumlah Kehadiran:</label>
+            <input type="number" id="attendance" name="attendance" min="1" required>
+    
+            <button type="submit">Kirim RSVP</button>
+        </form>
+    </div>
+    <div class="form-container">
+        <h2>Kirim Ucapan dan Doa</h2>
+        <form id="ucapanForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="message">Pesan Ucapan/Doa:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Kirim Ucapan</button>
+        </form>
+    </div>
+    
+    <div class="message-container">
+        <h2>Ucapan Tamu</h2>
+        <div id="messages"></div>
+    </div>
+    <script>
+        document.getElementById('ucapanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+    
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+    
+            const messageContainer = document.createElement('div');
+            messageContainer.classList.add('message');
+            messageContainer.innerHTML = `<strong>${name}:</strong> <p>${message}</p>`;
+    
+            document.getElementById('messages').appendChild(messageContainer);
+    
+            document.getElementById('ucapanForm').reset();
+    
+            setTimeout(() => {
+                messageContainer.classList.add('visible');
+            }, 100);
+        });
+    </script>
+    <h2 class="kata-kata">Wedding Gift</h2>
+    <div class="bank-container">
+        <div class="bank-card">
+            <div class="bank-details">
+                <img src="../assets/foto/mandiri.png" alt="Mandiri">
+                <p class="nomor">9000005740270</p>
+                <p>zayyan</p>
+            </div>
+            <button class="copy-btn">Salin Rekening</button>
+        </div>
+    
+        <div class="bank-card">
+            <div class="bank-details">
+                <img src="../assets/foto/bni.png" alt="BNI">
+                <p class="nomor">6000005740270</p>
+                <p>zahra</p>
+            </div>
+            <button class="copy-btn">Salin Rekening</button>
+        </div>
+    
+        <div class="bank-card">
+            <div class="bank-details">
+                <img src="../assets/foto/bri.png" alt="BRI">
+                <p class="nomor">9060005740270</p>
+                <p>zayyan & zahra</p>
+            </div>
+            <button class="copy-btn">Salin Rekening</button>
+        </div>
+        <audio id="audioPlayer" autoplay loop>
+            <source src="../assets/icon/Dystinct -La (Lyrics parole).mp3" type="audio/mpeg">
+        </audio>
+    
+        <script>
+            const audio = document.getElementById('audioPlayer');
+    
+            // Simpan posisi terakhir audio di localStorage
+            audio.addEventListener('timeupdate', function() {
+                localStorage.setItem('audioCurrentTime', audio.currentTime);
+            });
+    
+            // Lanjutkan pemutaran audio dari posisi terakhir yang tersimpan
+            window.addEventListener('load', function() {
+                const savedTime = localStorage.getItem('audioCurrentTime');
+                if (savedTime) {
+                    audio.currentTime = savedTime;
+                }
+                audio.play();
+            });
+        </script>
+            </div>
+    </div>
+                </div>
+        </div>
+    </div>
+    <div class="latar">
+        <a href="../index.html">
+            <img src="../assets/icon/home.svg" alt="home">
+        </a>
+            <a href="../page/tombol.html">
+                <img src="../assets/icon/mempelai.svg" alt="mempelai">
+            </a>
+               <a href="../page/acara.html">
+                <img src="../assets/icon/acara.svg" alt="acara">
+            </a>
+                        <a href="../page/gambar.html">
+                            <img src="../assets/icon/galerii.svg" alt="galeri">
+                        </a>
+                            <a href="../page/wish.html" class="active">
+                                <img src="../assets/icon/wish.svg" alt="wish" class="ikon">
+                            </a>
+                               <a href="../page/penutup.html">
+                                <img src="../assets/icon/penutup.svg" alt="penutup">
+                            </a>
+                                                 
+                </div>
+                <script>
+                const copyButtons = document.querySelectorAll('.copy-btn');
+        copyButtons.forEach((button, index) => {
+            button.addEventListener('click', function() {
+                const accountNumber = document.querySelectorAll('.nomor')[index].textContent;
+                const tempInput = document.createElement('textarea');
+                tempInput.value = accountNumber;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                button.textContent = 'Disalin!'                   
+ button.textContent = 'Disalin'; 
+                }, 2000);
+            });
+        </script>
+</body>
+</html>

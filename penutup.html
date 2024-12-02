@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/penutup.css">
+    <title>penutup</title>
+</head>
+<body>
+    <div class="cover">
+            <div class="foto-cover">
+               <img src="../undangan digital/Group 1.png" class="foto">
+            </div>
+          <p class="kata3"><br>Muhammad Zayyan<br><br>
+                &<br><br>
+                Fatimatul Az - Zahra
+            </p>
+            <p class="kata5"><br>Merupakan Suatu Kebahagiaan dan Kehormatan bagi Kami<br>Apabila Bapak/Ibu/Saudara/i, Berkenan Hadir di Acara kami</p>
+           <div class="kata7">Terimakasih</div>
+           
+            <div class="kata8">Made by : Fatimatul Az - Zahra
+                <br><a href="https://www.instagram.com/fatmzhraa_?igsh=MWVzN2JvOXNyd2xxOQ==" target="_blank" class="link-ig">
+                    instagram  
+                </a>
+                <audio id="audioPlayer" autoplay loop>
+                    <source src="../assets/icon/Dystinct -La (Lyrics parole).mp3" type="audio/mpeg">
+                </audio>
+            
+                <script>
+                    const audio = document.getElementById('audioPlayer');
+            
+                    // Simpan posisi terakhir audio di localStorage
+                    audio.addEventListener('timeupdate', function() {
+                        localStorage.setItem('audioCurrentTime', audio.currentTime);
+                    });
+            
+                    // Lanjutkan pemutaran audio dari posisi terakhir yang tersimpan
+                    window.addEventListener('load', function() {
+                        const savedTime = localStorage.getItem('audioCurrentTime');
+                        if (savedTime) {
+                            audio.currentTime = savedTime;
+                        }
+                        audio.play();
+                    });
+                </script>
+            </div>
+            
+        </div> </div>
+    </body>
+    </html>
+    <div class="latar">
+        <a href="../index.html">
+            <img src="../assets/icon/home.svg" alt="home">
+        </a>
+            <a href="../page/tombol.html">
+                <img src="../assets/icon/mempelai.svg" alt="mempelai">
+            </a>
+               <a href="../page/acara.html">
+                <img src="../assets/icon/acara.svg" alt="acara">
+            </a>
+                        <a href="../page/gambar.html">
+                            <img src="../assets/icon/galerii.svg" alt="galeri">
+                        </a>
+                            <a href="../page/wish.html">
+                                <img src="../assets/icon/wish.svg" alt="wish">
+                            </a>
+                               <a href="../page/penutup.html" class="active">
+                                <img src="../assets/icon/penutup.svg" alt="penutup"class="ikon">
+                            </a>
+                                                 
+                </div>
+
+</body>
+</html>
