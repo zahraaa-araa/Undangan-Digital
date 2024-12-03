@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.cover2{
+    background-image: url(bacground1.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: inknut;
+    font-size: 10px;
+    color: #5E080B;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%; 
+}
+.cover2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    background-color: rgba(125, 123, 123, 0.5);
+    z-index: 0; 
+}
+.cover2 * {
+    position: relative;
+    z-index: 1;
+}
+
+.border1{
+        margin-top: 0;
+        max-width: 100%;
+        width: 90%;
+        animation: slideIn 3s ease-out;
+        margin-bottom: -20px;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.judul3{
+    margin-top: -140px;
+    font-size: 50px;
+}
+
+.pasangan-mempelai {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    margin-top: 100px;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.nama1{
+    color: #5E080B;
+    font-size: 20px;
+    animation: moveRightToLeft 3s ease-in-out forwards;
+}
+@keyframes moveRightToLeft {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+.nama2{
+    color: #5E080B;
+    font-size: 20px;
+    animation: moveLeftToRight 3s ease-in-out forwards;
+}
+@keyframes moveLeftToRight {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+.dan{
+    font-size: 30px;
+    color: #ffff;
+    margin-bottom: 40px;
+}
+.borderr{
+    margin-top: 0;
+    max-width: 100%;
+    width: 90%;
+    animation: slideIn 3s ease-out;
+    margin-bottom: 20px;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.latar{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6A6764;
+}
+.ikon{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+.latar a.active::before{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+@media screen and (max-width: 768px){
+    .cover2{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin: none;
+    }
+    .latar{
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0;
+        width: 98%;
+        background-color: #6A6764;
+        margin: none;
+    }
+    .cover2::before{
+        height: 100%;
+        padding-bottom: 20%;
+        margin: none;
+    }
+    .border1{
+        margin-left: 20px;
+    }
+    .judul3{
+        margin-top: -80px;
+    }
+    .pasangan-mempelai{
+        flex-direction: column;
+        display: flex;
+        margin-top: 20px;
+    }
+    .borderr{
+        margin-left: 25px;
+        margin-bottom: 30px;
+    }
+}
+        body {
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+
+.border2{
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+.border1{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+}
+.border3{
+    position: absolute;
+    bottom: -90px;
+    left: 20px;
+    z-index: 1;
+}
+.border4{
+    position: absolute;
+    bottom: -90px;
+    right: 20px;
+    z-index: 1;
+}
+.cover1 {
+    background-image: url(bacground1.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: inknut;
+    font-size: 10px;
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 118vh; 
+    animation: slideUp 2s ease-in-out forwards;
+}
+
+.cover1::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(125, 123, 123, 0.5);
+    z-index: 0; 
+}
+
+.cover1 * {
+    position: relative;
+    z-index: 1;
+}
+
+.tema{
+    color: #ffff;  
+}
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.kata2{
+    color: #5E080B;
+    font-size: medium;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: slideUp 2s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kata3{
+    font-size: 20px;
+    transform: translateY(50px);
+    color: #ffff;
+    animation: slideUp 2s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kata4{
+    font-size: 15px;
+    color:#5E080B;
+    transform: translateY(50px);
+    animation: slideUp 2s ease-in-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.kata5{
+    font-size: 24px;
+    color: #ffff;
+}
+.tombol{
+    text-align: center;
+    justify-content: center;
+}
+.kata6{
+    font-family: 'Times New Roman', Times, serif;
+    color: #ffff;
+    background-color: #6A6764;
+    font-size: medium;
+    border-radius: 100px;
+    width: 192px;
+    height: 48px;
+   animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 20%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-30px);
+    }
+    60% {
+      transform: translateY(-15px);
+    }
+  }
+.foto-cover {
+    display: flex;
+    justify-content: center;
+}
+
+.kata6:hover{
+    background-color: #a7a1a1;
+}
+@media screen and (max-width: 768px){
+    .cover{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+    .foto{
+        width: 200px;
+        height: auto; 
+        border-radius: 50%;
+        border: 2px solid white;
+}
+.tombol{
+    margin-bottom: 100px;
+}
+.border3{
+    position: absolute;
+    bottom: -15%;
+    left: 20px;
+    z-index: 1;
+}
+.border4{
+    position: absolute;
+    bottom: -15%;
+    right: 20px;
+    z-index: 1;
+}
+    }
+    </style>
+    <svg class='border1' width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M100 12V112L87.5 25L0 12L100 12Z" fill="white"/>
+        <path d="M112 0L112 100L99.5 13L12 0L112 0Z" fill="white"/>
+        </svg>
+     <svg class='border2' width="113" height="112" viewBox="0 0 113 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M0 0H100L13 12.5L0 100V0Z" fill="white"/>
+            <path d="M13 12H113L26 24.5L13 112V12Z" fill="white"/>
+            </svg>
+            <svg class='border3' width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 112L0 12L12.5 99L100 112L0 112Z" fill="white"/>
+                <path d="M12 100L12 0L24.5 87L112 100L12 100Z" fill="white"/>
+                </svg>
+                <svg class = 'border4' width="112" height="112" viewBox="0 0 112 112" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M112 112L12 112L99 99.5L112 12L112 112Z" fill="white"/>
+                    <path d="M100 100L0 100L87 87.5L100 0L100 100Z" fill="white"/>
+                    </svg>
+                    
+    <div class="cover1">
+        <h1 class = "tema" ><br>The Wedding Of</h1>
+        <h3 class= "kata2">06.12.2024</h3>
+
+        <div class="foto-cover">
+            <img src="undangan digital/Group 1.png" class="foto">
+        </div>
+      
+
+        <p class="kata3"><br>Muhammad Zayyan<br><br>
+            &<br><br>
+            Fatimatul Az - Zahra
+        </p>
+        <p class="kata4"><br>Kepada:</p>
+        <p class="kata5"><br>Tamu Undangan  & keluarga </p>
+
+        <div class="tombol">
+        <a href="page/tombol.html"><button class="kata6">Buka Undangan</button></a>
+        </div>
+    </div>
+</body>
+</html>

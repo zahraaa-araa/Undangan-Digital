@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/wish.css">
+    <title>wish</title>
+</head>
+<body>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.cover{
+    background-image: url(bacground1.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+        font-family: inknut;
+        font-size: 10px;
+        color: #ffff;  
+        border-radius: 20px;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        min-height: 370vh;
+}
+.cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 370vh;
+    background-color: rgba(125, 123, 123, 0.5);
+    z-index: 0; 
+}
+.cover * {
+    position: relative;
+    z-index: 0;
+}
+.rsvp1{
+    font-size: 35px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.baca{
+    color:#5E080B;
+    font-size: 24px;
+}
+.rsvp-container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #5E080B;
+    box-shadow: 0 10px 1000px #6A6764;
+    border-radius: 8px;
+    text-align: center;
+    color: #6f1717 ;
+}
+
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 16px;
+}
+
+input[type="text"], input[type="email"], input[type="number"] {
+    width: auto;
+    padding: 10px;
+    margin-top: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #f43d3d;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+button:hover {
+    background-color: #f43d3d;
+}
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin: 10px 0 5px;
+    font-size: 16px;
+}
+
+input[type="text"], textarea {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #c91010;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #6f1717;
+}
+
+
+label {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #fff;
+    
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"] {
+    
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    border: 2px solid #6A6764;
+    background-color: #fff;
+    color: #333;
+    font-size: 14px;
+}
+
+button {
+    padding: 10px;
+    background-color: #5C5C5C;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #444444;
+}
+
+.form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #5E080B;
+    border-radius: 8px;
+    box-shadow: 0 10px 1000px #6A6764;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+.message-container {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #fff;
+    color: #5E080B;
+    border-radius: 8px;
+    box-shadow: 0 10px 1000px #6A6764;
+}
+
+#messages {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.message.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.message p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #5E080B;
+}
+
+@media (max-width: 768px) {
+    .cover{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    .rsvp1{
+        margin-top: -1000px;
+    }
+    .rsvp-container{
+        padding: 50px;
+    }
+    .form-container, .message-container {
+        padding: 50px;
+    }
+
+    input[type="text"], textarea, button {
+        font-size: 14px;
+    }
+
+    .message p {
+        font-size: 14px;
+    }
+}
+.kata-kata{
+    font-size: 30px;
+    color: #5E080B;
+}
+.bank-container {
+    max-width: 400px;
+    margin: 0 auto;
+}
+.bank-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 50px;
+    margin: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #000000;
+}
+.bank-card img {
+    width: 100px;
+}
+.bank-details {
+    text-align: left;
+}
+.bank-details p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.copy-btn {
+    background-color: #f9f2ec;
+    border: 1px solid #d7a971;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    color: #d7a971;
+    font-size: 12px;
+    transition: background-color 0.3s ease;
+}
+.copy-btn:hover {
+    background-color: #d7a971;
+    color: white;
+}
+.latar{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6A6764;
+}
+.ikon{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+.latar a.active::before{
+    background-color: #ffff;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+    </style>
+    <div class="cover">
+    <br><br><h2 class="rsvp1">RSVP</h2>
+    <br><h2 class="baca">Mohon untuk mengisi<br>rsvp di bawah ini</h2>
+    <div class="rsvp-container">
+        <form action="../page/thankyou.html" method="POST">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+    
+            <label for="email">Alamat Email:</label>
+            <input type="email" id="email" name="email" required>
+    
+            <label for="attendance">Jumlah Kehadiran:</label>
+            <input type="number" id="attendance" name="attendance" min="1" required>
+    
+            <button type="submit">Kirim RSVP</button>
+        </form>
+    </div>
+    <div class="form-container">
+        <h2>Kirim Ucapan dan Doa</h2>
+        <form id="ucapanForm">
+            <label for="name">Nama:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <label for="message">Pesan Ucapan/Doa:</label>
+            <textarea id="message" name="message" required></textarea>
+            
+            <button type="submit">Kirim Ucapan</button>
+        </form>
+    </div>
+    
+    <div class="message-container">
+        <h2>Ucapan Tamu</h2>
+        <div id="messages"></div>
+    </div>
+    <script>
+        document.getElementById('ucapanForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+    
+            const name = document.getElementById('name').value;
+            const message = document.getElementById('message').value;
+    
+            const messageContainer = document.createElement('div');
+            messageContainer.classList.add('message');
+            messageContainer.innerHTML = `<strong>${name}:</strong> <p>${message}</p>`;
+    
+            document.getElementById('messages').appendChild(messageContainer);
+    
+            document.getElementById('ucapanForm').reset();
+    
+            setTimeout(() => {
+                messageContainer.classList.add('visible');
+            }, 100);
+        });
+    </script>
+    <h2 class="kata-kata">Wedding Gift</h2>
+    <div class="bank-container">
+        <div class="bank-card">
+            <div class="bank-details">
+                <img src="mandiri.png" alt="Mandiri">
+                <p class="nomor">9000005740270</p>
+                <p>zayyan</p>
+            </div>
+            <button class="copy-btn">Salin Rekening</button>
+        </div>
+    
+        <div class="bank-card">
+            <div class="bank-details">
+                <img src="bni.png" alt="BNI">
+                <p class="nomor">6000005740270</p>
+                <p>zahra</p>
+            </div>
+            <button class="copy-btn">Salin Rekening</button>
+        </div>
+    
+        <div class="bank-card">
+            <div class="bank-details">
+                <img src="bri.png" alt="BRI">
+                <p class="nomor">9060005740270</p>
+                <p>zayyan & zahra</p>
+            </div>
+            <button class="copy-btn">Salin Rekening</button>
+        </div>
+        <audio id="audioPlayer" autoplay loop>
+            <source src="Dystinct -La (Lyrics parole).mp3" type="audio/mpeg">
+        </audio>
+    
+        <script>
+            const audio = document.getElementById('audioPlayer');
+    
+            // Simpan posisi terakhir audio di localStorage
+            audio.addEventListener('timeupdate', function() {
+                localStorage.setItem('audioCurrentTime', audio.currentTime);
+            });
+    
+            // Lanjutkan pemutaran audio dari posisi terakhir yang tersimpan
+            window.addEventListener('load', function() {
+                const savedTime = localStorage.getItem('audioCurrentTime');
+                if (savedTime) {
+                    audio.currentTime = savedTime;
+                }
+                audio.play();
+            });
+        </script>
+            </div>
+    </div>
+                </div>
+        </div>
+    </div>
+    <div class="latar">
+        <a href="index.html">
+            <img src="home.svg" alt="home">
+        </a>
+            <a href="tombol.html">
+                <img src="mempelai.svg" alt="mempelai">
+            </a>
+               <a href="acara.html">
+                <img src="acara.svg" alt="acara">
+            </a>
+                        <a href="gambar.html">
+                            <img src="galerii.svg" alt="galeri">
+                        </a>
+                            <a href="wish.html" class="active">
+                                <img src="wish.svg" alt="wish" class="ikon">
+                            </a>
+                               <a href="penutup.html">
+                                <img src="penutup.svg" alt="penutup">
+                            </a>
+                                                 
+                </div>
+                <script>
+                const copyButtons = document.querySelectorAll('.copy-btn');
+        copyButtons.forEach((button, index) => {
+            button.addEventListener('click', function() {
+                const accountNumber = document.querySelectorAll('.nomor')[index].textContent;
+                const tempInput = document.createElement('textarea');
+                tempInput.value = accountNumber;
+                document.body.appendChild(tempInput);
+                tempInput.select();
+                document.execCommand('copy');
+                document.body.removeChild(tempInput);
+                button.textContent = 'Disalin!'                   
+ button.textContent = 'Disalin'; 
+                }, 2000);
+            });
+        </script>
+</body>
+</html>

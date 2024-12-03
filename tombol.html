@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../style/tombol.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        body {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.cover2{
+    background-image: url(bacground1.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: inknut;
+    font-size: 10px;
+    color: #5E080B;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%; 
+}
+.cover2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    background-color: rgba(125, 123, 123, 0.5);
+    z-index: 0; 
+}
+.cover2 * {
+    position: relative;
+    z-index: 1;
+}
+
+.border1{
+        margin-top: 0;
+        max-width: 100%;
+        width: 90%;
+        animation: slideIn 3s ease-out;
+        margin-bottom: -20px;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.judul3{
+    margin-top: -140px;
+    font-size: 50px;
+}
+
+.pasangan-mempelai {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    margin-top: 100px;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.nama1{
+    color: #5E080B;
+    font-size: 20px;
+    animation: moveRightToLeft 3s ease-in-out forwards;
+}
+@keyframes moveRightToLeft {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+.nama2{
+    color: #5E080B;
+    font-size: 20px;
+    animation: moveLeftToRight 3s ease-in-out forwards;
+}
+@keyframes moveLeftToRight {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+.dan{
+    font-size: 30px;
+    color: #ffff;
+    margin-bottom: 40px;
+}
+.borderr{
+    margin-top: 0;
+    max-width: 100%;
+    width: 90%;
+    animation: slideIn 3s ease-out;
+    margin-bottom: 20px;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.latar{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6A6764;
+}
+.ikon{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+.latar a.active::before{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+@media screen and (max-width: 768px){
+    .cover2{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin: none;
+    }
+    .latar{
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0;
+        width: 98%;
+        background-color: #6A6764;
+        margin: none;
+    }
+    .cover2::before{
+        height: 100%;
+        padding-bottom: 20%;
+        margin: none;
+    }
+    .border1{
+        margin-left: 20px;
+    }
+    .judul3{
+        margin-top: -80px;
+    }
+    .pasangan-mempelai{
+        flex-direction: column;
+        display: flex;
+        margin-top: 20px;
+    }
+    .borderr{
+        margin-left: 25px;
+        margin-bottom: 30px;
+    }
+}
+    </style>
+    <div class="cover2">
+        <img class="border1" src="border.svg" alt="border">
+        <h1 class="judul3"><br>Pasangan Pengantin</h1>
+        <div class="pasangan-mempelai">
+            <div class="mempelai-cowok">
+            <img src="Group 2.png" class="Foto"> 
+            <p class="nama2"> Muhammad Zayyan
+             <br><br>Bin David Mahendra</p>
+        </div>
+
+        <div class="&"><p class="dan">&</p>
+</div>
+        
+        <div class="mempelai-cewek">
+        <img src="Group 3.png" alt="">
+        <p class="nama1"> Fatimatul Az - Zahra
+            <br><br>Binti Ahmad Saiful Hidayat</p>
+        </div>
+        <audio id="audioPlayer" autoplay loop>
+            <source src="Dystinct -La (Lyrics parole).mp3" type="audio/mpeg">
+        </audio>
+    
+        <script>
+            const audio = document.getElementById('audioPlayer');
+    
+            // Simpan posisi terakhir audio di localStorage
+            audio.addEventListener('timeupdate', function() {
+                localStorage.setItem('audioCurrentTime', audio.currentTime);
+            });
+    
+            // Lanjutkan pemutaran audio dari posisi terakhir yang tersimpan
+            window.addEventListener('load', function() {
+                const savedTime = localStorage.getItem('audioCurrentTime');
+                if (savedTime) {
+                    audio.currentTime = savedTime;
+                }
+                audio.play();
+            });
+        </script>
+    </div>
+    <img class="borderr" src="border2.svg" alt="borderr">
+    
+            <div class="latar">
+            <a href="../index.html">
+                <img src="home.svg" alt="home">
+            </a>
+                <a href="../page/tombol.html" class="active">
+                    <img src="mempelai.svg" alt="mempelai" class="ikon">
+                </a>
+                   <a href="../page/acara.html">
+                    <img src="acara.svg" alt="acara">
+                </a>
+                            <a href="../page/gambar.html">
+                                <img src="galerii.svg" alt="galeri">
+                            </a>
+                                <a href="../page/wish.html">
+                                    <img src="wish.svg" alt="wish">
+                                </a>
+                                   <a href="../page/penutup.html">
+                                    <img src="penutup.svg" alt="penutup">
+                                </a>
+                                                     
+                    </div>
+                    
+</body>
+</html>

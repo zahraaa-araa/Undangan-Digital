@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="gambar.css">
+    <title>gambar</title>
+</head>
+<body>
+    <style>
+        body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+
+.cover{
+    background-image: url(bacground1.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+        font-family: inknut;
+        font-size: 10px;
+        color: #ffff;  
+        border-radius: 20px;
+        justify-content: center;
+        text-align: center;
+        width: 100vw;
+        min-height: 360vh;
+}
+.cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 360vh;
+    background-color: rgba(125, 123, 123, 0.5);
+    z-index: 0; 
+}
+.cover * {
+    position: relative;
+    z-index: 0;
+}
+.video1{
+    font-size: 40px;
+    color: #ffffff;
+}
+@font-face { font-family: serendipity; src: url('Cookie-Regular.ttf'); } 
+      .video1 {
+         font-family:serendipity;
+      }
+
+     .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 1000px;
+            height: 500px; 
+            box-shadow: 0 10px 1000px #6A6764;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-left: 150px;
+        }
+        video {
+            width: 90%;
+            height: 90%;
+            border-radius: 10px;
+            object-fit: cover;
+            margin-top:25px;
+        }
+
+.video3{
+    font-size: 40px;
+    color: #ffffff;
+}
+@font-face { font-family: cookie; src: url('Cookie-Regular.ttf');}
+.video3{
+    font-family: cookie;
+}
+.container-video {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    height: 500px; 
+    box-shadow: 0 10px 1000px #6A6764;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-left: 150px;
+}
+video {
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-top:25px;
+}
+
+.gallery1{
+    font-size: 40px;
+    color: #ffffff;
+}
+@font-face { font-family: cookie; src: url('Cookie-Regular.ttf');}
+.gallery1{
+    font-family: cookie;
+}
+
+/* Kontainer slideshow */
+.slideshow-container {
+    max-width: 600px; /* Mengatur ukuran maksimal slideshow */
+    position: relative;
+    margin-top: 40px;
+    margin-left: 350px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Menambahkan bayangan pada kontainer */
+    border-radius: 10px; /* Membuat sudut kontainer bulat */
+    overflow: hidden;
+}
+
+/* Setiap slide */
+.mySlides {
+    display: none;
+    text-align: center;
+}
+
+/* Gambar slide */
+img {
+    width: 90%;
+    height: auto;
+    border-radius: 10px; /* Membuat sudut gambar bulat */
+}
+
+/* Tombol prev dan next */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5); /* Transparansi untuk tombol */
+    border-radius: 0 3px 3px 0;
+}
+
+/* Tombol prev di sebelah kiri */
+.prev {
+    left: 0;
+}
+
+/* Tombol next di sebelah kanan */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+.foto1{
+    width: 564px;
+    height: 703px;
+}
+/* Transisi fade-in */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: 0.4}
+    to {opacity: 1}
+}
+
+.latar{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6A6764;
+}
+.ikon{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+.latar a.active::before{
+    background-color: #ffff;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+@media screen and (max-width: 768px){
+    .cover{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        min-height: 370vh;
+    }
+    .cover::before{
+        min-height: 385vh;
+    }
+    
+    .video-container{
+        margin-left: 40px;
+    }
+    .container-video{
+        margin-left: 40px;
+    }
+    .prev, .next {
+        font-size: 14px; /* Perkecil tombol */
+        padding: 10px;
+    }
+
+    img {
+        max-width: 100px; /* Pastikan gambar selalu memenuhi lebar layar */
+        height: auto;    /* Jaga proporsi gambar */
+        border-radius: 5px; /* Kurangi radius bulat pada ponsel */
+    }
+    .foto1 {
+        width: 100%; /* Pastikan gambar menyesuaikan ukuran kontainer */
+        height: auto;
+    }
+}
+    </style>
+    <div class="cover">
+    <br><br><h2 class="video1">Video Prewedding</h2>
+    <div class="video-container">
+        <video controls>
+            <source src="vidio1.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div class="cover2">
+        <br><br><br><h2 class="video3">Video Pernikahan</h2><br><br><br>
+        <div class="container-video">
+            <video controls>
+                <source src="Denia and Irfan Wedding 1 Menit Instagram.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+                <img class="foto1" src="potocewe3.jpeg" style="width:90%">
+            </div>
+        
+            <div class="mySlides fade">
+                <img class="foto1" src="potocowok2.jpg" style="width:90%">
+            </div>
+        
+            <div class="mySlides fade">
+                <img class="foto1" src="potocowo4.jpg" style="width:90%">
+            </div>
+            <div class="mySlides fade">
+                <img class="foto1" src="potocewe6.jpg" style="width:90%">
+            </div>
+            <div class="mySlides fade">
+                <img class="foto1" src="potocewe.jpeg" style="width:90%">
+            </div>
+        
+            <div class="mySlides fade">
+                <img class="foto1" src="potocowo1.jpeg" style="width:90%">
+            </div>
+        
+            <div class="mySlides fade">
+                <img class="foto1" src="poto cowo3.jpeg" style="width:90%">
+            </div>
+            <div class="mySlides fade">
+                <img class="foto1" src="poto cewe4.jpeg" style="width:90%">
+            </div>
+        
+            <!-- Tombol navigasi -->
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <script>
+            var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndex-1].style.display = "block";
+}
+
+        </script>
+                <audio id="audioPlayer" autoplay loop>
+                    <source src="Dystinct -La (Lyrics parole).mp3" type="audio/mpeg">
+                </audio>
+            
+                <script>
+                    const audio = document.getElementById('audioPlayer');
+            
+                    // Simpan posisi terakhir audio di localStorage
+                    audio.addEventListener('timeupdate', function() {
+                        localStorage.setItem('audioCurrentTime', audio.currentTime);
+                    });
+            
+                    // Lanjutkan pemutaran audio dari posisi terakhir yang tersimpan
+                    window.addEventListener('load', function() {
+                        const savedTime = localStorage.getItem('audioCurrentTime');
+                        if (savedTime) {
+                            audio.currentTime = savedTime;
+                        }
+                        audio.play();
+                    });
+                </script>
+            </div>
+    </div>
+    <div class="latar">
+        <a href="index.html">
+            <img src="home.svg" alt="home">
+        </a>
+            <a href="tombol.html">
+                <img src="mempelai.svg" alt="mempelai">
+            </a>
+               <a href="acara.html">
+                <img src="acara.svg" alt="acara">
+            </a>
+                        <a href="gambar.html" class="active">
+                            <img src="galerii.svg" alt="galeri"  class="ikon">
+                        </a>
+                            <a href="wish.html">
+                                <img src="wish.svg" alt="wish">
+                            </a>
+                               <a href="penutup.html">
+                                <img src="penutup.svg" alt="penutup">
+                            </a>
+                                                 
+                </div>
+
+</body>
+</html>
