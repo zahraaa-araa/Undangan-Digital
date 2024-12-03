@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="acara.css">
+    <title>acara</title>
+</head>
+<body>
+    <style>
+        .body{
+    text-align: center;
+}
+
+.cover{
+    background-image: url(bacground1.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+        font-family: inknut;
+        font-size: 10px;
+        color: #ffff;  
+        border-radius: 20px;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        min-height: 280vh;
+}
+.cover::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 280vh;
+    background-color: rgba(125, 123, 123, 0.5);
+    z-index: 0; 
+}
+.cover * {
+    position: relative;
+    z-index: 0;
+}
+.judul1{
+    font-size: 30px;
+    color: #5E080B;
+    
+}
+.isi2{
+    font-size: 25px;
+    animation: moveRightToLeft 3s ease-in-out forwards;
+}
+@keyframes moveRightToLeft {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.isi3{
+    font-size: 20px;
+    animation: moveLeftToRight 3s ease-in-out forwards;
+}
+@keyframes moveLeftToRight {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+.isi4{
+    font-size: 30px;
+    color: #5E080B;
+}
+.isi5{
+    font-size: 25px;
+    animation: moveLeftToRight 3s ease-in-out forwards;
+}
+.isi6{
+    font-size: 20px;
+    animation: moveRightToLeft 3s ease-in-out forwards;
+}
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.countdown div {
+    background-color: #706f6f;
+    border-radius: 10px;
+    padding: 15px;
+    min-width: 60px;
+    text-align: center;
+}
+
+.countdown div h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+.countdown div p {
+    margin: 5px 0 0;
+    font-size: 1em;
+}
+
+.ucapan {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 30%;
+}
+.location-link {
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: #5E080B;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+    animation: growShrink 2s ease-in-out forwards;
+
+}
+.location-link:hover {
+    text-decoration: underline;
+    background-color: #833436;
+}
+.location-link2 {
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    background-color: #5E080B;
+    border-radius: 5px;
+    padding: 10px;
+    font-weight: bold;
+}
+.location-link2:hover {
+    text-decoration: underline;
+    background-color: #833436;
+}
+.card {
+    background-color: #737373;
+    color: white;
+    width: 300px;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(121, 158, 215, 10.10);
+    text-align: center;
+}
+
+.title {
+    color: #ffffff;
+    font-size: 40px;
+    margin-top: -20px;
+    animation: growShrink 2s ease-in-out infinite;
+
+}
+@keyframes growShrink {
+    0% {
+        font-size: 24px;
+    }
+    50% {
+        font-size: 40px;
+    }
+    100% {
+        font-size: 24px;
+    }
+}
+
+@font-face { font-family: cookie; src: url('Cookie-Regular.ttf');}
+.title{
+    font-family: cookie;
+}
+
+.month {
+    color: #5E080B;
+    font-size: 18px;
+}
+
+.date {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.time, .location {
+    color: rgb(0, 0, 0);
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.date span {
+    margin: 0 5px;
+}
+.latar{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6A6764;
+}
+.ikon{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+.latar a.active::before{
+    background-color: #ffff;
+    border-radius: 5px;
+    padding-bottom: 20px;
+}
+@media screen and (max-width: 768px){
+    .cover{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+
+    } .ucapan {
+        flex-direction: column;
+        gap: 15px;
+    }
+    .judul1{
+        margin-top: -500px;
+    }
+    .countdown div {
+        background-color: #706f6f;
+        border-radius: 10px;
+        padding: 5px;
+        min-width: 60px;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(121, 158, 215, 10.10);
+
+    }
+    .card{
+        margin-bottom: 100px;
+        padding: 35px;
+    }
+}
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
+.cover2{
+    background-image: url(bacground1.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: inknut;
+    font-size: 10px;
+    color: #5E080B;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    height: 100%; 
+}
+.cover2::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 150vh;
+    background-color: rgba(125, 123, 123, 0.5);
+    z-index: 0; 
+}
+.cover2 * {
+    position: relative;
+    z-index: 1;
+}
+
+.border1{
+        margin-top: 0;
+        max-width: 100%;
+        width: 90%;
+        animation: slideIn 3s ease-out;
+        margin-bottom: -20px;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.judul3{
+    margin-top: -140px;
+    font-size: 50px;
+}
+
+.pasangan-mempelai {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+    margin-top: 100px;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+.nama1{
+    color: #5E080B;
+    font-size: 20px;
+    animation: moveRightToLeft 3s ease-in-out forwards;
+}
+@keyframes moveRightToLeft {
+    0% {
+        left: 100%;
+    }
+    100% {
+        left: 0;
+    }
+}
+.nama2{
+    color: #5E080B;
+    font-size: 20px;
+    animation: moveLeftToRight 3s ease-in-out forwards;
+}
+@keyframes moveLeftToRight {
+    0% {
+        right: 100%;
+    }
+    100% {
+        right: 0;
+    }
+}
+.dan{
+    font-size: 30px;
+    color: #ffff;
+    margin-bottom: 40px;
+}
+.borderr{
+    margin-top: 0;
+    max-width: 100%;
+    width: 90%;
+    animation: slideIn 3s ease-out;
+    margin-bottom: 20px;
+}
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.latar{
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #6A6764;
+}
+.ikon{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+.latar a.active::before{
+    background-color: #ffff;
+    border-radius: 5px;
+}
+@media screen and (max-width: 768px){
+    .cover2{
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        margin: none;
+    }
+    .latar{
+        display: flex;
+        justify-content: space-around;
+        position: fixed;
+        bottom: 0;
+        width: 98%;
+        background-color: #6A6764;
+        margin: none;
+    }
+    .cover2::before{
+        height: 100%;
+        padding-bottom: 20%;
+        margin: none;
+    }
+    .border1{
+        margin-left: 20px;
+    }
+    .judul3{
+        margin-top: -80px;
+    }
+    .pasangan-mempelai{
+        flex-direction: column;
+        display: flex;
+        margin-top: 20px;
+    }
+    .borderr{
+        margin-left: 25px;
+        margin-bottom: 30px;
+    }
+}
+    </style>
+    <div class="cover">
+    <br><br><h2 class="judul1">Surah Ar - Rum Ayat 21</h2>
+    <br><p class="isi2">وَمِنْ اٰيٰتِهٖٓ اَنْ خَلَقَ لَكُمْ مِّنْ اَنْفُسِكُمْ اَزْوَاجًا لِّتَسْكُنُوْٓا اِلَيْهَا وَجَعَلَ بَيْنَكُمْمَّوَدَّةً وَّرَحْمَةًۗ اِنَّ فِيْ ذٰلِكَ لَاٰيٰتٍ لِّقَوْمٍ يَّتَفَكَّرُوْنَ</p>
+    <br><p class="isi3">Di antara tanda-tanda (kebesaran)-Nya ialah bahwa Dia menciptakan pasangan-pasangan untukmu dari (jenis) dirimu<br>sendiri agar kamu merasa tenteram kepadanya.Dia menjadikan di antaramu rasa cinta dan kasih sayang.<br>
+        Sesungguhnya pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.</p>
+       <br> <p class="isi4">Doa Pernikahan</p>
+        <p class="isi5">بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+        <p class="isi6">Semoga Allah Memberkahimu di waktu bahagia dan memberkahimu di waktu susah,<br> dan semoga Allah menyatukan kalian berdua dalam kebaikan.
+            <br>(HR. Abu Daud, no.2130; Tirmidzi, no.1091. AL Hafizh Abu Thahir mengatakan bahwa sanad hadist ini sahih).
+        </p>
+       <br> <div class="countdown">
+            <div>
+                <h1 id="days">0</h1>
+                <p>Hari</p>
+            </div>
+            <div>
+                <h1 id="hours">0</h1>
+                <p>Jam</p>
+            </div>
+            <div>
+                <h1 id="minutes">0</h1>
+                <p>Menit</p>
+            </div>
+            <div>
+                <h1 id="seconds">0</h1>
+                <p>Detik</p>
+            </div>
+        </div>
+    
+        <script>
+            // Set the date for the countdown (Example: December 31, 2024)
+            var countdownDate = new Date("Dec 31, 2024 00:00:00").getTime();
+    
+            // Update the countdown every 1 second
+            var countdownFunction = setInterval(function() {
+    
+                // Get today's date and time
+                var now = new Date().getTime();
+    
+                // Find the distance between now and the countdown date
+                var distance = countdownDate - now;
+    
+                // Time calculations for days, hours, minutes and seconds
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+                // Display the result in the respective elements
+                document.getElementById("days").innerHTML = days;
+                document.getElementById("hours").innerHTML = hours;
+                document.getElementById("minutes").innerHTML = minutes;
+                document.getElementById("seconds").innerHTML = seconds;
+    
+                // If the countdown is over, write some text
+                if (distance < 0) {
+                    clearInterval(countdownFunction);
+                    document.querySelector(".countdown").innerHTML = "Event has started!";
+                }
+            }, 1000);
+        </script>
+
+        <div class="ucapan">
+            <div class="card">
+                <h2 class="title">Resepsi Pernikahan</h2>
+                <p class="month">Desember</p>
+                <p class="date"><span>Minggu</span> <span>06</span> <span>2036</span></p>
+                <p class="time">pukul 06.00 sampai selesai</p>
+                <p class="location">Hotel Golden Tulip Holland Resort Batu</p>
+                <br><br><a href="https://maps.app.goo.gl/HQJQtr1CmBP8fMeM9" target="_blank" class="location-link">
+                    Lokasi  
+                </a>
+            </div>
+            <div class="card">
+                <h2 class="title">Akad Pernikahan</h2>
+                <p class="month">Desember</p>
+                <p class="date"><span>Jum'at</span> <span>04</span> <span>2036</span></p>
+                <p class="time">pukul 12.00 sampai selesai</p>
+                <p class="location">Masjid Agung Malang</p>
+                <br><br><a href="https://maps.app.goo.gl/f2ziwEyZF9T9LDvr6" target="_blank" class="location-link">
+                    Lokasi  
+                </a>
+                <audio id="audioPlayer" autoplay loop>
+                    <source src="Dystinct -La (Lyrics parole).mp3" type="audio/mpeg">
+                </audio>
+            
+                <script>
+                    const audio = document.getElementById('audioPlayer');
+            
+                    // Simpan posisi terakhir audio di localStorage
+                    audio.addEventListener('timeupdate', function() {
+                        localStorage.setItem('audioCurrentTime', audio.currentTime);
+                    });
+            
+                    // Lanjutkan pemutaran audio dari posisi terakhir yang tersimpan
+                    window.addEventListener('load', function() {
+                        const savedTime = localStorage.getItem('audioCurrentTime');
+                        if (savedTime) {
+                            audio.currentTime = savedTime;
+                        }
+                        audio.play();
+                    });
+                </script>
+        </div> 
+    </div>
+</div>
+    <div class="latar">
+        <a href="index.html">
+            <img src="home.svg" alt="home">
+        </a>
+            <a href="tombol.html">
+                <img src="mempelai.svg" alt="mempelai">
+            </a>
+               <a href="acara.html" class="active">
+                <img src="acara.svg" alt="acara" class="ikon">
+            </a>
+                        <a href="gambar.html">
+                            <img src="galerii.svg" alt="galeri">
+                        </a>
+                            <a href="wish.html">
+                                <img src="wish.svg" alt="wish">
+                            </a>
+                               <a href="penutup.html">
+                                <img src="penutup.svg" alt="penutup">
+                            </a>
+</body>
+</html>
